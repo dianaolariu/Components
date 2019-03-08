@@ -6,10 +6,10 @@ class OneButton extends React.Component {
         alert('ha')
    }
     render() {
-        const { text, image,} = this.props;
+        const { image, text, onPress } = this.props;
             return (
                 <View style={[this.props.style, styles.wrap]}>      
-                   <TouchableOpacity onPress = {this.showAlert} style={styles.button} >
+                   <TouchableOpacity onPress = {onPress} style={styles.button} >
                         <Image style={styles.imageX} source={image} />
                         <Text style={styles.buttonText}>{text}</Text>
                     </TouchableOpacity>        
