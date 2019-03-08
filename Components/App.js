@@ -1,29 +1,40 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow
- * @lint-ignore-every XPLATJSCOPYRIGHT1
- */
 
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View} from 'react-native';
+import {Platform, StyleSheet, Text, View, ScrollView } from 'react-native';
 import OneButton from './OneButtonFile/one-button';
-
-const instructions = Platform.select({
-  ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
-  android:
-    'Double tap R on your keyboard to reload,\n' +
-    'Shake or press menu button for dev menu',
-});
 
 type Props = {};
 export default class App extends Component<Props> {
   render() {
     return (
       <View style={styles.container}>
-        <OneButton />
+        <ScrollView horizontal style={{flexDirection: 'row', marginTop: 100, overflowX: 'auto', }}>
+          <OneButton 
+            text='Button 1' 
+            image={require('./OneButtonFile/icon-house.png')} 
+            buttonPress={(index) => alert(`${index} was pressed`)}
+            index={1} />
+          <OneButton 
+            text='Button 2' 
+            image={require('./OneButtonFile/icon-house.png')} 
+            buttonPress={(index) => alert(`${index} was pressed`)}
+            index={2} />
+          <OneButton 
+            text='Button 3' 
+            image={require('./OneButtonFile/icon-house.png')} 
+            buttonPress={(index) => alert(`${index} was pressed`)}
+            index={3} />
+          <OneButton 
+            text='Button 4' 
+            image={require('./OneButtonFile/icon-house.png')} 
+            buttonPress={(index) => alert(`${index} was pressed`)}
+            index={4} />
+          <OneButton 
+            text='Button 5' 
+            image={require('./OneButtonFile/icon-house.png')} 
+            buttonPress={(index) => alert(`${index} was pressed`)}
+            index={5} />
+        </ScrollView>
       </View>
     );
   }
@@ -32,9 +43,7 @@ export default class App extends Component<Props> {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
     backgroundColor: '#649EBC',
-    flexDirection: 'row',
+    padding: 20,
   },
 });
