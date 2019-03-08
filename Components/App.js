@@ -9,8 +9,12 @@
 
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View} from 'react-native';
+import OneButton from './components/one-button';
 import EightButton from './components/eight-button';
 import ShowingCard from './components/showing-card';
+import DateTime from './components/date-picker';
+import DateTimePickerTester from './components/date-try';
+import ProposedPayment from './components/propose-payment';
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -26,7 +30,12 @@ export default class App extends Component<Props> {
   render() {
     return (
       <View style={styles.container}>
-        <ShowingCard />
+        {/* <OneButton /> */}
+        {/* <EightButton /> */}
+        {/* <ShowingCard /> */}
+        <ProposedPayment />
+        {/* <DateTime />  */}
+        {/* <DateTimePickerTester /> */}
       </View>
     );
   }

@@ -6,7 +6,7 @@ class ShowingCard extends React.Component {
         alert('ha')
    }
     render() {
-        const { date, adress, confirmation, profile, image, text, onPress } = this.props;
+        const { date, adress, confirmation, profile, image, text, } = this.props;
             return (     
                    <View style={styles.button}>
                         <View style={styles.buttonUp}>
@@ -25,7 +25,7 @@ class ShowingCard extends React.Component {
                             <Text style={styles.buttonText}>Joe Garcia</Text>
                         </View>
                     </View>        
-                // </View>
+
             )
     }
 }
@@ -69,7 +69,6 @@ const styles = StyleSheet.create({
         width: 340,
         borderBottomLeftRadius: 20,
         borderBottomRightRadius:20,
-        
       },
     
     imageS: {
