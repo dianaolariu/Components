@@ -28,29 +28,29 @@ export default class ProposedPayment extends Component {
  render() {
    return (
      <View style={styles.container}>
-	 	<TouchableOpacity onPress={this.onPressTwo} style = {{borderBottomLeftRadius: 100, borderBottomRightRadius: 0, borderTopLeftRadius: 100, borderTopRightRadius: 0,  backgroundColor: 'white', borderRightWidth: 2, borderRightColor: '#F5F5F5'}} >
+	 	  <TouchableOpacity onPress={this.onPressTwo} style = {{borderBottomLeftRadius: 100, borderBottomRightRadius: 0, borderTopLeftRadius: 100, borderTopRightRadius: 0,  backgroundColor: 'white', borderRightWidth: 2, borderRightColor: '#F5F5F5'}} >
 				<Text style={{fontSize: 32 , color: '#6DA3D3', textAligh: 'center', padding: 16, }}>-</Text>	
-		</TouchableOpacity>
-        <TouchableOpacity style={styles.button}>
-			<TextInput multiline = {true} keyboardType="numeric" style = {{fontSize: 28, color: '#6DA3D3', textAlign: 'center', minWidth: 140}} onChangeText={(count) => this.input2number(count)}
+		  </TouchableOpacity>
+      <TouchableOpacity style={styles.button}>
+			  <TextInput multiline = {true} keyboardType="numeric" style = {{fontSize: 28, color: '#6DA3D3', textAlign: 'center', minWidth: 140}} onChangeText={(count) => this.input2number(count)}
 			 value={this.state.count}>{'$'+this.state.count+'\n'}
 			 	<Text style={{fontSize: 12}}>Show Keypad</Text>
-			</TextInput>
-        </TouchableOpacity>
+			  </TextInput>
+      </TouchableOpacity>
 	    <TouchableOpacity onPress={this.onPress} style = {{borderBottomLeftRadius: 0, borderBottomRightRadius:100, borderTopLeftRadius: 0, borderTopRightRadius: 100, backgroundColor: 'white', borderLeftWidth: 2, borderLeftColor: '#F5F5F5'}}>
-		 	<Text style={{fontSize: 32 , color: '#6DA3D3', textAligh: 'center', padding: 16}}>+</Text>	 
-		</TouchableOpacity>
-      </View>
+		 	  <Text style={{fontSize: 32 , color: '#6DA3D3', textAligh: 'center', padding: 16}}>+</Text>	 
+		  </TouchableOpacity>
+    </View>
     )
   }
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    marginTop: 100,
     justifyContent: 'center',
-	paddingHorizontal: 10,
-	flexDirection: 'row',
+	  paddingHorizontal: 10,
+	  flexDirection: 'row',
 	
   },
   button: {

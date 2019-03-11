@@ -2,27 +2,24 @@ import React from 'react';
 import { Text, StyleSheet, TouchableOpacity, View, Image } from 'react-native';
 
 class ShowingCard extends React.Component {
-   showAlert(){
-        alert('ha')
-   }
     render() {
-        const { date, adress, confirmation, profile, image, text, } = this.props;
+        const { date,logo, adress, confirmationLogo, confirmation, profile, name, } = this.props;
             return (     
                    <View style={styles.button}>
                         <View style={styles.buttonUp}>
                             <View style={styles.buttonUpLeft}>
-                                <Text style={styles.buttonText}>Wed 19 12:00 PM</Text>
+                                <Text style={styles.buttonText}>{date}</Text>
                             </View>
                             <View style={styles.buttonUpRight}>
-                                <Image style={styles.imageS} source={require('../assets/logo.png')} />
-                                <Text style={styles.buttonAdress}>1841 S. Calumet #602</Text>
+                                <Image style={styles.imageS} source={logo} />
+                                <Text style={styles.buttonAdress}>{adress}</Text>
                             </View>
                         </View>
                         <View style={styles.buttonDown}>
-                            <Image style={styles.imageG} source={require('../assets/green.png')} />
-                            <Text style={styles.buttonText}>Request Confirmed</Text>
-                            <Image style={styles.imageX} source={require('../assets/green.png')} />
-                            <Text style={styles.buttonText}>Joe Garcia</Text>
+                            <Image style={styles.imageG} source={confirmationLogo} />
+                            <Text style={styles.buttonText}>{confirmation}</Text>
+                            <Image style={styles.imageX} source={profile} />
+                            <Text style={styles.buttonText}>{name}</Text>
                         </View>
                     </View>        
 
@@ -31,6 +28,7 @@ class ShowingCard extends React.Component {
 }
 const styles = StyleSheet.create({
     button: {
+        marginTop: 100,
         backgroundColor: 'white',
         height: 180,
         width: 340,
