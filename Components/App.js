@@ -4,6 +4,7 @@ import {Platform, StyleSheet, Text, View, ScrollView } from 'react-native';
 import OneButton from './OneButtonFile/one-button';
 import ProposedPayment from './components/propose-payment';
 import ShowingCard from './components/showing-card';
+import EmotionControl from './components/emotion-control';
 
 type Props = {};
 export default class App extends Component<Props> {
@@ -39,14 +40,15 @@ export default class App extends Component<Props> {
         </ScrollView> */}
         {/* <ProposedPayment /> */}
         
-          <ShowingCard
+          {/* <ShowingCard
             date= 'Wed 19 12:00 PM'
             logo={require('./assets/logo.png')}
             adress= '1841 S. Calumet #602'
             confirmationLogo={require('./assets/green.png')}
             confirmation= 'Request Confirmed'
             profile={require('./assets/green.png')} 
-            name= 'Joe Garcia'/> 
+            name= 'Joe Garcia'/>  */}
+          <EmotionControl />
       </View>
     );
   }
@@ -56,6 +58,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#649EBC',
-    padding: 20,
+    //padding: 20,
   },
 });
