@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { TouchableOpacity,View } from 'react-native';
-// import EmotionControl from './components/emotion-control';
+//import EmotionControl from './components/emotion-control';
 
 
 class SelectorControl extends React.Component {

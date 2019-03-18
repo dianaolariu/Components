@@ -5,6 +5,8 @@ import OneButton from './OneButtonFile/one-button';
 import ProposedPayment from './components/propose-payment';
 import ShowingCard from './components/showing-card';
 import EmotionControl from './components/emotion-control';
+import SelectorControl from './components/selector-control';
+
 
 type Props = {};
 export default class App extends Component<Props> {
@@ -39,16 +41,20 @@ export default class App extends Component<Props> {
             index={5} />
         </ScrollView> */}
         {/* <ProposedPayment /> */}
-        
-          {/* <ShowingCard
-            date= 'Wed 19 12:00 PM'
+          <ShowingCard
+            date= 'Wed'
+            day = '19'
+            time = '12:00 PM'
             logo={require('./assets/logo.png')}
             adress= '1841 S. Calumet #602'
             confirmationLogo={require('./assets/green.png')}
             confirmation= 'Request Confirmed'
             profile={require('./assets/green.png')} 
-            name= 'Joe Garcia'/>  */}
-          <EmotionControl />
+            name= 'Joe Garcia'/> 
+          {/* <EmotionControl /> */}
+          {/* <SelectorControl /> */}
+          {/* <DotCreate /> */}
+          {/* <SixColorDot /> */}
       </View>
     );
   }

@@ -3,12 +3,14 @@ import { Text, StyleSheet, TouchableOpacity, View, Image } from 'react-native';
 
 class ShowingCard extends React.Component {
     render() {
-        const { date,logo, adress, confirmationLogo, confirmation, profile, name, } = this.props;
+        const { date, day, time, logo, adress, confirmationLogo, confirmation, profile, name, } = this.props;
             return (     
                    <View style={styles.button}>
                         <View style={styles.buttonUp}>
                             <View style={styles.buttonUpLeft}>
-                                <Text style={styles.buttonText}>{date}</Text>
+                                <Text style={[styles.buttonText, style={height: 20}]}>{date}</Text>
+                                <Text style={[styles.buttonText, style={height: 70, fontSize: 60}]}>{day}</Text>
+                                <Text style={[styles.buttonText, style={height: 20}]}>{time}</Text>
                             </View>
                             <View style={styles.buttonUpRight}>
                                 <Image style={styles.imageS} source={logo} />
