@@ -8,9 +8,9 @@ class ShowingCard extends React.Component {
                    <View style={styles.button}>
                         <View style={styles.buttonUp}>
                             <View style={styles.buttonUpLeft}>
-                                <Text style={[styles.buttonText, style={height: 20}]}>{date}</Text>
-                                <Text style={[styles.buttonText, style={height: 70, fontSize: 60}]}>{day}</Text>
-                                <Text style={[styles.buttonText, style={height: 20}]}>{time}</Text>
+                                <Text style={{height: 20}}>{date}</Text>
+                                <Text style={{height: 70, fontSize: 60}}>{day}</Text>
+                                <Text style={{height: 20}}>{time}</Text>
                             </View>
                             <View style={styles.buttonUpRight}>
                                 <Image style={styles.imageS} source={logo} />
@@ -19,7 +19,7 @@ class ShowingCard extends React.Component {
                         </View>
                         <View style={styles.buttonDown}>
                             <Image style={styles.imageG} source={confirmationLogo} />
-                            <Text style={styles.buttonText}>{confirmation}</Text>
+                            <Text>{confirmation}</Text>
                             <Image style={styles.imageX} source={profile} />
                             <Text style={styles.buttonText}>{name}</Text>
                         </View>
@@ -30,6 +30,7 @@ class ShowingCard extends React.Component {
 }
 const styles = StyleSheet.create({
     button: {
+        marginLeft: 10,
         marginTop: 100,
         backgroundColor: 'white',
         height: 180,
@@ -89,7 +90,11 @@ const styles = StyleSheet.create({
     imageG: {
         borderRadius:10, 
     },
+    imageX: {
+        marginLeft: 20
+    },
+    buttonText: {
+        marginLeft: 5
+    }
 });
 export default  ShowingCard;
-// require('./two.png')
-//style={styles.button} 

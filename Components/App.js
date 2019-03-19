@@ -6,6 +6,7 @@ import ProposedPayment from './components/propose-payment';
 import ShowingCard from './components/showing-card';
 import EmotionControl from './components/emotion-control';
 import SelectorControl from './components/selector-control';
+import BrokerCard from './components/broker-card';
 
 
 type Props = {};
@@ -41,20 +42,28 @@ export default class App extends Component<Props> {
             index={5} />
         </ScrollView> */}
         {/* <ProposedPayment /> */}
-          <ShowingCard
+        {/* <ShowingCard
+          date= 'Wed'
+          day = '19'
+          time = '12:00 PM'
+          logo={require('./assets/logo.png')}
+          adress= '1841 S. Calumet #602'
+          confirmationLogo={require('./assets/green.png')}
+          confirmation= 'Request Confirmed'
+          profile={require('./assets/user-profile.png')} 
+          name= 'Joe Garcia'/>  */}
+          {/* <EmotionControl /> */}
+          <BrokerCard
+            logo={require('./assets/blue2.png')}
+            profile={require('./assets/user-profile@3.png')}
             date= 'Wed'
             day = '19'
             time = '12:00 PM'
-            logo={require('./assets/logo.png')}
-            adress= '1841 S. Calumet #602'
-            confirmationLogo={require('./assets/green.png')}
-            confirmation= 'Request Confirmed'
-            profile={require('./assets/green.png')} 
-            name= 'Joe Garcia'/> 
-          {/* <EmotionControl /> */}
-          {/* <SelectorControl /> */}
-          {/* <DotCreate /> */}
-          {/* <SixColorDot /> */}
+            camera={require('./assets/camera.png')}
+            typeRequest= 'PHOTOSHOOT'
+            brokerName= 'Marshall Beck'
+            location= '169 W.Huron #1311'
+            amount= '$75'/>
       </View>
     );
   }
