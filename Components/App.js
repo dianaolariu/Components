@@ -7,7 +7,9 @@ import ShowingCard from './components/showing-card';
 import EmotionControl from './components/emotion-control';
 import SelectorControl from './components/selector-control';
 import BrokerCard from './components/broker-card';
-
+import CompletedAssist from './components/completed-assist';
+import Stars from './components/stars';
+import StarRating from './components/star-inverse';
 
 type Props = {};
 export default class App extends Component<Props> {
@@ -41,6 +43,7 @@ export default class App extends Component<Props> {
             buttonPress={(index) => alert(`${index} was pressed`)}
             index={5} />
         </ScrollView> */}
+        {/* <EmotionControl /> */}
         {/* <ProposedPayment /> */}
         {/* <ShowingCard
           date= 'Wed'
@@ -52,8 +55,7 @@ export default class App extends Component<Props> {
           confirmation= 'Request Confirmed'
           profile={require('./assets/user-profile.png')} 
           name= 'Joe Garcia'/>  */}
-          {/* <EmotionControl /> */}
-          <BrokerCard
+          {/* <BrokerCard
             logo={require('./assets/blue2.png')}
             profile={require('./assets/user-profile@3.png')}
             date= 'Wed'
@@ -63,7 +65,10 @@ export default class App extends Component<Props> {
             typeRequest= 'PHOTOSHOOT'
             brokerName= 'Marshall Beck'
             location= '169 W.Huron #1311'
-            amount= '$75'/>
+            amount= '$75'/> */}
+          <CompletedAssist />
+          
+         
       </View>
     );
   }
@@ -72,7 +77,8 @@ export default class App extends Component<Props> {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#649EBC',
+    backgroundColor: '#f5f5f5',
+    //backgroundColor: '#649EBC',
     //padding: 20,
   },
 });
