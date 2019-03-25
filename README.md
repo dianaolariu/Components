@@ -1,2 +1,2 @@
 # Components
-All my components
+My components.
