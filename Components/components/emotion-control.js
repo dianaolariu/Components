@@ -31,7 +31,7 @@ export default class EmotionControl extends Component {
         return (
           <View>
           {/* <View style={{backgroundColor: this.state.list[this.state.index].color_val, flex: 1, opacity: this.state.list[this.state.index].opacity_val, height: 320, width: 320}}> */}
-            <TouchableOpacity style={{margin: 190,}} onPress={ this.onPress } >
+            <TouchableOpacity style={{margin: 0,}} onPress={ this.onPress } >
               <Image style={styles.image} source={this.state.image} />
               <View style={{height: 30, width: 30, borderRadius: 30, backgroundColor: this.state.list[this.state.index].color_val, opacity: this.state.list[this.state.index].opacity_val, top: 8, left: 7}}></View>
             </TouchableOpacity>
