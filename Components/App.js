@@ -13,6 +13,8 @@ import StarRating from './components/star-inverse';
 import MainView from './components/main-view';
 import HashTag from './components/hashtag';
 import Create from './components/component';
+import DisputePayment from './components/dispute-payment';
+
 
 type Props = {};
 export default class App extends Component<Props> {
@@ -70,10 +72,10 @@ export default class App extends Component<Props> {
             location= '169 W.Huron #1311'
             amount= '$75'/> */}
           {/* <CompletedAssist /> */}
-          <MainView />
+          {/* <MainView /> */}
           {/* <HashTag /> */}
           {/* < Create /> */}
-          
+          <DisputePayment />
          
       </View>
     );
@@ -83,8 +85,8 @@ export default class App extends Component<Props> {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    //backgroundColor: '#f5f5f5',
-    backgroundColor: '#649EBC',
+    backgroundColor: '#f5f5f5',
+    //backgroundColor: '#649EBC',
     //padding: 20,
   },
 });
