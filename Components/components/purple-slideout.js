@@ -1,64 +1,78 @@
 import React, { Component } from 'react';
-import { Alert, AppRegistry, Button, StyleSheet, View, Text, ScrollView, TouchableOpacity } from 'react-native';
+import { Alert, StyleSheet, View, Text, ScrollView, TouchableOpacity } from 'react-native';
 
 export default class PurpleSlideout extends Component {
     constructor(){
-    super();
-    this.state ={
-        status:true
-    }
+        super();
+        this.state ={
+            status:true
+        }
     }
     _onPressButton= () => {
         this.setState({status: false})
     }
     _onPressButtonOk= () => {
-        Alert.alert('Event Confirmed')
-       
-   }
+        Alert.alert('Event Confirmed')    
+    }
 
     render() {
         const {text} = this.props;
         return (
-            
-            <View style={styles.container}>
-                {this.state.status ?
-                 <View style={styles.container}>
-                    <View style={styles.container2}>  
-                        <Button
-                            onPress={this._onPressButton}
-                            title="X"
-                            color="white"
-                        />
-                    </View>
+            this.state.status ?
+                <View style={styles.container}>
+                    <TouchableOpacity style={styles.closeX} onPress={this._onPressButton}>  
+                        <Text style={styles.textX}>X</Text>
+                    </TouchableOpacity>
                     <ScrollView>
-                        <Text style ={{textAlign: 'left', marginLeft: 20, marginRight: 30, fontSize: 18, color: 'white',}}>
+                        <Text style={styles.pageText}>
                         {text}
                         </Text>    
                     </ScrollView>
-                    <View style = {{ position: 'relative',flexDirection: 'row', fontSize: 60, justifyContent: 'space-around', marginBottom: 30, marginTop: 10}}>
-                        {/* <Button onPress={this._onPressButton}
-                                    title="Close"
-                                    color="white" /> */}
-                        <Button onPress={this._onPressButtonOk}
-                                    title="Ok"
-                                    color="white"/>
-                    </View>
-                </View> : null }
-        </View> 
+                    <TouchableOpacity onPress={this._onPressButtonOk}>
+                        <Text>OK</Text> 
+                    </TouchableOpacity>
+                </View> : null 
+            
         );
     }
-    }
+}
 
 const styles = StyleSheet.create({
   container: {
-   flex: 1,
-   backgroundColor: '#7a4696'
+    flex: 1,
+    backgroundColor: '#7a4696'
+   
   },
-  container2: {
-    marginTop: 40,
-    marginLeft: 5,
+  closeX: {
+    marginTop: 30,
+    marginLeft: 10,
     width: 40,
-    fontSize: 80,
+    backgroundColor: '#7a4696',
    },
+textX: {
+    color: 'white',
+    fontSize: 24,
+    marginBottom: 1,
+    },
+pageText: {
+    textAlign: 'left',
+    marginLeft: 20,
+    marginRight: 30,
+    fontSize: 18,
+    color: 'white',
+    },
+confirm: {
+    position: 'relative',
+    flexDirection: 'row',
+    fontSize: 60,
+    justifyContent: 'space-around',
+    marginBottom: 30,
+    marginTop: 10
+    },
+textOk: {
+    color: 'white',
+    fontSize: 24,
+    marginTop: 10
+}
 });
 
