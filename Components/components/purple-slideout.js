@@ -28,51 +28,49 @@ export default class PurpleSlideout extends Component {
                         {text}
                         </Text>    
                     </ScrollView>
-                    <TouchableOpacity onPress={this._onPressButtonOk}>
-                        <Text>OK</Text> 
+                    <TouchableOpacity style={styles.confirm} onPress={this._onPressButtonOk}>
+                        <Text style={styles.textOk}>OK</Text> 
                     </TouchableOpacity>
-                </View> : null 
-            
+                </View> : null   
         );
     }
 }
-
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#7a4696'
-   
-  },
-  closeX: {
-    marginTop: 30,
-    marginLeft: 10,
-    width: 40,
-    backgroundColor: '#7a4696',
-   },
-textX: {
-    color: 'white',
-    fontSize: 24,
-    marginBottom: 1,
+    container: {
+        flex: 1,
+        backgroundColor: '#7a4696'
+    
     },
-pageText: {
-    textAlign: 'left',
-    marginLeft: 20,
-    marginRight: 30,
-    fontSize: 18,
-    color: 'white',
+    closeX: {
+        marginTop: 30,
+        marginLeft: 10,
+        width: 40,
+        backgroundColor: '#7a4696',
     },
-confirm: {
-    position: 'relative',
-    flexDirection: 'row',
-    fontSize: 60,
-    justifyContent: 'space-around',
-    marginBottom: 30,
-    marginTop: 10
+    textX: {
+        color: 'white',
+        fontSize: 24,
+        marginBottom: 1,
     },
-textOk: {
-    color: 'white',
-    fontSize: 24,
-    marginTop: 10
-}
+    pageText: {
+        textAlign: 'left',
+        marginLeft: 20,
+        marginRight: 30,
+        fontSize: 18,
+        color: 'white',
+    },
+    confirm: {
+        position: 'relative',
+        flexDirection: 'row',
+        fontSize: 60,
+        justifyContent: 'space-around',
+        marginBottom: 30,
+        marginTop: 10
+    },
+    textOk: {
+        color: 'white',
+        fontSize: 24,
+        marginTop: 10
+    },
 });
 
