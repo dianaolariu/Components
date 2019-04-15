@@ -16,36 +16,37 @@ import Create from './components/component';
 import DisputePayment from './components/dispute-payment';
 import Signature from 'react-native-signature-canvas';
 import PurpleSlideout from './components/purple-slideout';
-import SignatureCapture from '@alanlima/react-native-signature-capture';
+import SignatureCapturePage from './components/signature-capture-page';
+// import SignatureCapture from '@alanlima/react-native-signature-capture';
 
 
 
 type Props = {};
 export default class App extends Component<Props> {
-  constructor(props) {
-    super(props);
-    this.state = { signature: null };
-  }
+  // constructor(props) {
+  //   super(props);
+  //   this.state = { signature: null };
+  // }
 
-  saveSign() {
-    this.refs["sign"].saveImage();
-  }
+  // saveSign() {
+  //   this.refs["sign"].saveImage();
+  // }
 
-  resetSign() {
-      this.refs["sign"].resetImage();
-  }
+  // resetSign() {
+  //     this.refs["sign"].resetImage();
+  // }
 
-  _onSaveEvent(result) {
-      //result.encoded - for the base64 encoded png
-      //result.pathName - for the file path name
-      const base64String = `data:image/png;base64,${result.encoded}`;
-      this.setState({signature: base64String});
-      console.log(result);
-  }
-  _onDragEvent() {
-      // This callback will be called when the user enters signature
-      console.log("dragged");
-  }
+  // _onSaveEvent(result) {
+  //     //result.encoded - for the base64 encoded png
+  //     //result.pathName - for the file path name
+  //     const base64String = `data:image/png;base64,${result.encoded}`;
+  //     this.setState({signature: base64String});
+  //     console.log(result);
+  // }
+  // _onDragEvent() {
+  //     // This callback will be called when the user enters signature
+  //     console.log("dragged");
+  // }
   render() {
     const style = `.m-signature-pad--footer
       .button {
@@ -87,7 +88,7 @@ export default class App extends Component<Props> {
       //     m repetition, injected humour, or non-characteristic words etc." />
       // </View>
       <ScrollView style={styles.container}>
-          <Text style={{fontSize:96}}>Scroll me plz</Text>
+          {/* <Text style={{fontSize:96}}>Scroll me plz</Text>
           <View style={{ height: 400 }}  >
                 <Text style={{alignItems:"center",justifyContent:"center"}} >Signature Capture Extended </Text>
                 <SignatureCapture
@@ -115,7 +116,7 @@ export default class App extends Component<Props> {
  
                 </View>
  
-            </View>
+            </View> */}
           {/* <View style={{height:400}}>
             <Signature
               onOK={this.handleSignature}
@@ -125,7 +126,7 @@ export default class App extends Component<Props> {
               webStyle={style}
             />
           </View> */}
-          <View style={{height:400}}>
+          {/* <View style={{height:400}}>
             {this.state.signature ? (
               <Image
                 resizeMode={"contain"}
@@ -135,14 +136,16 @@ export default class App extends Component<Props> {
             ) : 
               null
             }
-          </View>
+          </View> */}
           {/* <View style={{height:400, width: 200, margin:100}}>
             <TextInput value={this.state.signature}
                       style={{height:400, width: 200}}
                       multiline= {'true'}></TextInput>
           </View> */}
-          <Image source={{uri: "https://facebook.github.io/react-native/img/favicon.png", width: 64, height: 64}} />
+          {/* <Image source={{uri: "https://facebook.github.io/react-native/img/favicon.png", width: 64, height: 64}} /> */}
+          <SignatureCapturePage />
         </ScrollView>
+          
       //  {/* <View style={styles.container}> */}
       //   {/* <ScrollView horizontal style={{flexDirection: 'row', marginTop: 100, overflowX: 'auto', }}>
       //     <OneButton 
