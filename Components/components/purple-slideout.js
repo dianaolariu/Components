@@ -1,45 +1,66 @@
 import React, { Component } from 'react';
-import { Alert, StyleSheet, View, Text, ScrollView, TouchableOpacity } from 'react-native';
+import { Alert, StyleSheet, View, Text, ScrollView, TouchableOpacity, Animated, Easing, Dimensions } from 'react-native';
+
+
+
+var { width } = Dimensions.get('window');
 
 export default class PurpleSlideout extends Component {
-    constructor(){
-        super();
-        this.state ={
-            status:true
+    constructor(props){ 
+        super(props);
+        this.state = {
+            xValue: new Animated.Value(width),
         }
     }
-    _onPressButton= () => {
-        this.setState({status: false})
-    }
-    _onPressButtonOk= () => {
-        Alert.alert('Event Confirmed')    
+
+    componentWillMount(){
+        //this._move(true);
     }
 
+    _move = (visible) => {
+        Animated.timing(this.state.xValue, {
+            toValue: visible ? width : 0,
+            duration: 300,
+            asing: Easing.linear,
+        }).start(() => this.props.callback(visible));
+        //this.setState({ visible: 0, });
+       }
+    myFunc(newState) {
+        this._move(newState);
+    }
     render() {
-        const {text} = this.props;
+        const {text, confirm, move } = this.props;
         return (
-            this.state.status ?
-                <View style={styles.container}>
-                    <TouchableOpacity style={styles.closeX} onPress={this._onPressButton}>  
+                <Animated.View style={[styles.containerAnimation, {marginLeft: this.state.xValue}]} >
+                    <TouchableOpacity style={styles.closeX} onPress={() => this._move(true)}>  
                         <Text style={styles.textX}>X</Text>
                     </TouchableOpacity>
-                    <ScrollView>
+                    <ScrollView style={{backgroundColor: '#7a4696'}}>
                         <Text style={styles.pageText}>
-                        {text}
+                            {text}
                         </Text>    
                     </ScrollView>
-                    <TouchableOpacity style={styles.confirm} onPress={this._onPressButtonOk}>
+                    <TouchableOpacity style={styles.confirm} onPress={confirm}>
                         <Text style={styles.textOk}>OK</Text> 
                     </TouchableOpacity>
-                </View> : null   
+                </Animated.View>
+  
         );
     }
 }
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#7a4696'
-    
+        position: 'absolute',
+        top: 0, 
+        bottom: 0,  
+        right: 0,
+        backgroundColor: '#7a4696',
+    },
+    containerAnimation: {
+        flex: 1,
+        flexDirection: 'column',
+        backgroundColor: '#7a4696', 
     },
     closeX: {
         marginTop: 30,
@@ -60,17 +81,14 @@ const styles = StyleSheet.create({
         color: 'white',
     },
     confirm: {
-        position: 'relative',
-        flexDirection: 'row',
-        fontSize: 60,
-        justifyContent: 'space-around',
-        marginBottom: 30,
-        marginTop: 10
+        marginBottom: 20,
+        alignItems: 'center',
     },
     textOk: {
         color: 'white',
         fontSize: 24,
-        marginTop: 10
+        marginTop: 10,
+        justifyContent: 'center',
     },
 });
 
