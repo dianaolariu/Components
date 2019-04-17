@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Alert, StyleSheet, View, Text, ScrollView, TouchableOpacity, Animated, Easing, Dimensions } from 'react-native';
+import { StyleSheet,Text, ScrollView, TouchableOpacity, Animated, Easing, Dimensions } from 'react-native';
 
 
 
@@ -13,25 +13,22 @@ export default class PurpleSlideout extends Component {
         }
     }
 
-    componentWillMount(){
-        //this._move(true);
-    }
-
     _move = (visible) => {
         Animated.timing(this.state.xValue, {
             toValue: visible ? width : 0,
             duration: 300,
             asing: Easing.linear,
         }).start(() => this.props.callback(visible));
-        //this.setState({ visible: 0, });
        }
+
     myFunc(newState) {
         this._move(newState);
     }
+    
     render() {
-        const {text, confirm, move } = this.props;
+        const {text, confirm,} = this.props;
         return (
-                <Animated.View style={[styles.containerAnimation, {marginLeft: this.state.xValue}]} >
+                <Animated.View style={[styles.container, {marginLeft: this.state.xValue}]} >
                     <TouchableOpacity style={styles.closeX} onPress={() => this._move(true)}>  
                         <Text style={styles.textX}>X</Text>
                     </TouchableOpacity>
@@ -44,7 +41,6 @@ export default class PurpleSlideout extends Component {
                         <Text style={styles.textOk}>OK</Text> 
                     </TouchableOpacity>
                 </Animated.View>
-  
         );
     }
 }
@@ -57,31 +53,23 @@ const styles = StyleSheet.create({
         right: 0,
         backgroundColor: '#7a4696',
     },
-    containerAnimation: {
-        flex: 1,
-        flexDirection: 'column',
-        backgroundColor: '#7a4696', 
-    },
-    closeX: {
-        marginTop: 30,
-        marginLeft: 10,
-        width: 40,
-        backgroundColor: '#7a4696',
-    },
     textX: {
+        paddingTop: 30,
+        paddingLeft: 10,
         color: 'white',
         fontSize: 24,
-        marginBottom: 1,
     },
     pageText: {
         textAlign: 'left',
-        marginLeft: 20,
-        marginRight: 30,
+        paddingLeft: 20,
+        paddingRight: 35,
+        paddingTop: 10,
         fontSize: 18,
         color: 'white',
     },
     confirm: {
-        marginBottom: 20,
+        paddingBottom: 20,
+        paddingTop: 10,
         alignItems: 'center',
     },
     textOk: {

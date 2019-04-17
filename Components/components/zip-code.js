@@ -3,40 +3,42 @@ import { StyleSheet,TouchableOpacity,View,Alert, Text,} from 'react-native';
 import axios from 'axios';
 import Single from '../components/single';
 
-
+const zipcodes = require('zipcodes');
 export default class ZipCode extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            news: []
+           zipcodesList : []
         }
     }
-    componentDitMount() {
-        const url = 'https://newsapi.org/v2/top-headlines?' +
-        'country=us&' +
-        'apiKey=e705379224a443f4a768fad418d33eea';
-        axios.get(url)
-            .then((response) => {
-                this.setState({
-                    news: response.data.articles
-                });
-            })
-    }
+    // componentDitMount() {
+    //     // const url = 'https://newsapi.org/v2/top-headlines?' +
+    //     // 'country=us&' +
+    //     // 'apiKey=e705379224a443f4a768fad418d33eea';
+    //     const url = require('zipcodes');
+    //     axios.get(url)
+    //         .then((response) => {
+    //             this.setState({
+    //                 zipcodes: response.zipcodes.lookup(90210);
+    //                 //zipcodes: response.data.articles
+    //             });
+    //         })
+    // }
    
-    renderItems() {
-        return this.state.news.map((item) => {
-            <Single key={item.url} item={item} />
-        })
+    // renderItems() {
+    //     return this.state.zipcodes.map((item) => {
+    //         <Single key={item.url} item={item} />
+    //     })
 
-    }
+    // }
     render() {
         return ( 
             
-            // <TouchableOpacity onPress={() => Alert.alert(text=`Dispute Payment \n `, `Please call our customer service toll free number for any disputes.1-800-311-2605`)} style={styles.button}>
+            
                 <View style={styles.container}>
                 {this.renderItems()}
                 </View>
-            // </TouchableOpacity>        
+                
         )
         }
     }

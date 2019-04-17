@@ -19,8 +19,8 @@ import PurpleSlideout from './components/purple-slideout';
 import SignatureCapturePage from './components/signature-capture-page';
 // import SignatureCapture from '@alanlima/react-native-signature-capture';
 import EventList from './components/event-list';
-import SlideTry from './components/slide-try';
-import ZipCode from './components/zip-code'
+
+
 
 
 export default class App extends Component<Props> {
@@ -29,10 +29,6 @@ export default class App extends Component<Props> {
     super(props);
     this.state = {
       slideoutVisible: true, 
-      // news: {
-      //   type: 'everything',
-      //   query:'domanis=techcrunch.com&language=en'
-      // }
     };
   }
   _onPressButtonOk= () => {
@@ -109,12 +105,10 @@ export default class App extends Component<Props> {
           // <DisputePayment />
       // {/* </View> */}
       <View style={styles.container}>
+        {/* <ZipCode /> */}
       <TouchableOpacity style={styles.closeX} onPress ={this._onPressButtonAt}>
           <Text style={{fontSize: 50, color: 'black', alignSelf: 'center', marginTop: 150, }}>@</Text>
       </TouchableOpacity>
-      <Text>{this.state.slideoutVisible? 'true' : 'false'}</Text>
-      { 
-        //this.state.slideoutVisible  &&
         <PurpleSlideout
         ref={foo => {this.foo = foo;}}
         callback={this.getResponse.bind(this)}
@@ -147,13 +141,8 @@ export default class App extends Component<Props> {
           necessary, making this the first true generator on the Internet. It uses a dictionary
           over 200 Latin words, combined with a handful of model sentence structures, to generate
           Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free 
-          m repetition, injected humour, or non-characteristic words etc." confirm = {this._onPressButtonOk} />
-          }
-        
+          m repetition, injected humour, or non-characteristic words etc." confirm = {this._onPressButtonOk} />      
       </View>
-      // <View style={styles.container}>
-      //   <ZipCode news={this.state.news}/>
-      // </View>
     );
   }
 }

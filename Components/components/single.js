@@ -3,10 +3,6 @@ import { StyleSheet,TouchableOpacity,Alert, Text,} from 'react-native';
 
 
 const Single = ({item}) => (
-    //  <TouchableOpacity onPress={() => Alert.alert(text=`Dispute Payment \n `, `Please call our customer service toll free number for any disputes.1-800-311-2605`)} style={styles.button}>
-    //             <Text style={styles.buttonText}>{this.renderItems()}</Text>
-                
-    //         </TouchableOpacity>  
     <View>
         <Text>{item.url}</Text>
     </View>
