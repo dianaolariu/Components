@@ -146,11 +146,17 @@ export default class App extends Component<Props> {
       //     Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free 
       //     m repetition, injected humour, or non-characteristic words etc." confirm = {this._onPressButtonOk} /> 
       // </View>
-      <View style = {styles.container}>
-        {/* <EventList /> */}
+      <ScrollView style = {styles.container}>
+        <EventList />
+        {/* <EventList />
+        <EventList />
+        <EventList />
+        <EventList /> */}
+
         {/* <RequestAssist /> */}
-        <ZipCodesApi />
-      </View>
+        {/* <ZipCodesApi /> */}
+        {/* <MainView /> */}
+      </ScrollView>
     );
   }
 }
@@ -158,8 +164,12 @@ export default class App extends Component<Props> {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    //height:150,
+    //width: 300,
+    //resizeMode: 'contain',
+    marginTop: 80,
     backgroundColor: '#f5f5f5',
-    margin: 40,
+    // margin: 40,
    // width: 40,
    // height: 440
     //flexDirection: "column",

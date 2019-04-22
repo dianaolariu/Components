@@ -7,6 +7,7 @@ export default class ZipCodesApi extends Component {
         super(props);
         this.state = { 
         places: [{}],
+        formatted_address: null
         }
     }
    
@@ -19,7 +20,11 @@ export default class ZipCodesApi extends Component {
                     return (item.types[0] == 'locality' || item.types[0] == 'administrative_area_level_1')
                 }
             )
-            this.setState({ places: tmp, 
+            tmp2 = response.data.results[0].formatted_address
+            tmp3 = tmp2.search('60651')
+            tmp4 = tmp2.slice(0,tmp3)+'60651'
+            console.log(tmp3)
+            this.setState({ places: tmp, formatted_address: tmp4
             })  
         })
         .catch(error => {
@@ -33,7 +38,7 @@ export default class ZipCodesApi extends Component {
     render() {
         return (
             <View>
-                 {/* <Text>{this.state.places[0].long_name}</Text> */}
+                <Text>{this.state.formatted_address}</Text>
                 {   
                 this.state.places.map((place) =>
                     {
