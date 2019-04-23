@@ -30,7 +30,8 @@
     "jest": "24.3.0",
     "metro-react-native-babel-preset": "0.53.0",
     "prettier": "^1.16.4",
-    "react-test-renderer": "16.6.3"
+    "react-test-renderer": "16.6.3",
+    "reactotron-react-native": "^3.2.2"
   },
   "jest": {
     "preset": "react-native"

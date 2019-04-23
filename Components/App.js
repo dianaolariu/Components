@@ -147,16 +147,16 @@ export default class App extends Component<Props> {
       //     m repetition, injected humour, or non-characteristic words etc." confirm = {this._onPressButtonOk} /> 
       // </View>
       <ScrollView style = {styles.container}>
-        <EventList  name='Carles Javierre Petit'
+        {/* <EventList  name='Carles Javierre Petit'
                     link=''
-        />
+        /> */}
         {/* <EventList />
         <EventList />
         <EventList />
         <EventList /> */}
 
         {/* <RequestAssist /> */}
-        {/* <ZipCodesApi /> */}
+        <ZipCodesApi />
         {/* <MainView /> */}
       </ScrollView>
     );
@@ -170,13 +170,13 @@ const styles = StyleSheet.create({
     //width: 300,
     //resizeMode: 'contain',
     marginTop: 80,
-    backgroundColor: '#f5f5f5',
+    //backgroundColor: '#f5f5f5',
     // margin: 40,
    // width: 40,
    // height: 440
     //flexDirection: "column",
     //transform: [{ rotate: '270deg'}]
-    //backgroundColor: '#649EBC',
+    backgroundColor: '#649EBC',
     //padding: 20,
   },
 });
