@@ -147,7 +147,9 @@ export default class App extends Component<Props> {
       //     m repetition, injected humour, or non-characteristic words etc." confirm = {this._onPressButtonOk} /> 
       // </View>
       <ScrollView style = {styles.container}>
-        <EventList />
+        <EventList  name='Carles Javierre Petit'
+                    link=''
+        />
         {/* <EventList />
         <EventList />
         <EventList />

@@ -38,21 +38,21 @@ export default class ZipCodesApi extends Component {
     render() {
         return (
             <View>
-                <Text>{this.state.formatted_address}</Text>
-                {   
+                <Text style={{color: 'white'}}>{this.state.formatted_address}</Text>
+                {/* {   
                 this.state.places.map((place) =>
                     {
                         //if(this.state.places[0].types == 'postal_code'){
                             return (
                               
                                 <View >
-                                    <Text>{place.long_name}</Text>
+                                    <Text style={{color: 'white'}}>{place.long_name}</Text>
                                 </View> 
                             );
                         //}
                     }
                 )
-                }
+                } */}
             </View>    
         );
     }
