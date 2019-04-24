@@ -54,12 +54,12 @@ export default class SignatureCapturePage extends Component<Props> {
                         </TouchableOpacity>
                     </View>
                 </View>
-                <View>
+                <View style={{width: 60, height: 60,}}>
                     {this.state.signature ? (
                     <Image
                         source={{ uri: this.state.signature }}
-                        style={{width: 400, height:400}}
-                        resizeMode={"contain"}
+                        style={{width: '100%', height:'100%'}}
+                        resizeMode="contain"
 
                     /> ) : null
                     }
@@ -75,11 +75,11 @@ const styles = StyleSheet.create({
         backgroundColor: '#f5f5f5',
     },
     capture: {
-        height: 400,
+        height: 200,
         margin: 20,    
     },
     tab: {
-        flex: 1,
+        //flex: 1,
         flexDirection: "row",
         justifyContent: 'space-around',
     },

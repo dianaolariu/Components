@@ -25,7 +25,13 @@ import ZipCodesApi from './components/zip-codes-api';
 
 
 export default class App extends Component<Props> {
-
+//   constructor(props) {
+//     super(props);
+//     this.state = { 
+//         formatted_address: '07030',
+//     }
+// }
+  
 //   constructor(props){
 //     super(props);
 //     this.state = {
@@ -108,11 +114,11 @@ export default class App extends Component<Props> {
           // <DisputePayment />
       // {/* </View> */}
       // <View style={styles.container}>
-        // {/* <ZipCode /> */}
-      // <TouchableOpacity style={styles.closeX} onPress ={this._onPressButtonAt}>
-      //     <Text style={{fontSize: 50, color: 'black', alignSelf: 'center', marginTop: 150, }}>@</Text>
-      // </TouchableOpacity>
-      //   <PurpleSlideout
+      
+      //  <TouchableOpacity style={styles.closeX} onPress ={this._onPressButtonAt}>
+      //      <Text style={{fontSize: 50, color: 'black', alignSelf: 'center', marginTop: 150, }}>@</Text>
+      //  </TouchableOpacity>
+      //    <PurpleSlideout
       //   ref={foo => {this.foo = foo;}}
       //   callback={this.getResponse.bind(this)}
       //   text="Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from
@@ -146,19 +152,22 @@ export default class App extends Component<Props> {
       //     Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free 
       //     m repetition, injected humour, or non-characteristic words etc." confirm = {this._onPressButtonOk} /> 
       // </View>
-      <ScrollView style = {styles.container}>
-        {/* <EventList  name='Carles Javierre Petit'
-                    link=''
-        /> */}
-        {/* <EventList />
-        <EventList />
-        <EventList />
-        <EventList /> */}
+       <ScrollView style = {styles.container}>
+        <EventList  name='Justin Timberlake'
+                    address='Heidelberg, PA 15106'
+                    date='Monday, December 10th - 7.30 PM'
+        />
+        {/* <SignatureCapturePage /> */}
+         {/* <EventList />
+         <EventList />
+         <EventList />
+         <EventList />  */}
 
-        {/* <RequestAssist /> */}
-        <ZipCodesApi />
-        {/* <MainView /> */}
-      </ScrollView>
+        {/* // <RequestAssist />
+        //   <ZipCodesApi  formatted_address = {this.state.formatted_address}
+        //    /> 
+        //    <MainView /> */}
+        </ScrollView>
     );
   }
 }
@@ -170,13 +179,13 @@ const styles = StyleSheet.create({
     //width: 300,
     //resizeMode: 'contain',
     marginTop: 80,
-    //backgroundColor: '#f5f5f5',
+    backgroundColor: '#f5f5f5',
     // margin: 40,
    // width: 40,
    // height: 440
     //flexDirection: "column",
     //transform: [{ rotate: '270deg'}]
-    backgroundColor: '#649EBC',
+    //backgroundColor: '#649EBC',
     //padding: 20,
   },
 });

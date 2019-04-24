@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { StyleSheet,Text, ScrollView, TouchableOpacity, Animated, Easing, Dimensions } from 'react-native';
-
+import { StyleSheet,Text, ScrollView, TouchableOpacity, Animated, Easing, Dimensions, View } from 'react-native';
+import SignatureCapturePage from '../components/signature-capture-page';
 
 
 var { width } = Dimensions.get('window');
@@ -15,7 +15,7 @@ export default class PurpleSlideout extends Component {
 
     _move = (visible) => {
         Animated.timing(this.state.xValue, {
-            toValue: visible ? width : 0,
+            toValue: visible ? width : -8,
             duration: 300,
             asing: Easing.linear,
         }).start(() => this.props.callback(visible));
@@ -28,36 +28,54 @@ export default class PurpleSlideout extends Component {
     render() {
         const {text, confirm,} = this.props;
         return (
-                <Animated.View style={[styles.container, {marginLeft: this.state.xValue}]} >
-                    <TouchableOpacity style={styles.closeX} onPress={() => this._move(true)}>  
-                        <Text style={styles.textX}>X</Text>
+            <Animated.View style={[styles.container, {marginLeft: this.state.xValue}]} >
+                <View style={styles.containerTop}>
+                    <TouchableOpacity onPress={() => this._move(true)}>  
+                        <Text style ={{color: 'white', fontSize: 24, paddingLeft: 10}}>X</Text>
                     </TouchableOpacity>
-                    <ScrollView style={{backgroundColor: '#7a4696'}}>
+                </View>
+                    <ScrollView style={[styles.containerMiddle, {backgroundColor: '#7a4696'}]}>
                         <Text style={styles.pageText}>
                             {text}
-                        </Text>    
+                        </Text>
+                        <SignatureCapturePage /> 
                     </ScrollView>
-                    <TouchableOpacity style={styles.confirm} onPress={confirm}>
-                        <Text style={styles.textOk}>OK</Text> 
+                    <View style={styles.containerBottom}>
+                    <TouchableOpacity onPress={confirm}>
+                        <Text style ={{color: 'white', fontSize: 24}}>OK</Text> 
                     </TouchableOpacity>
-                </Animated.View>
+                    </View>
+            </Animated.View>
         );
     }
 }
 const styles = StyleSheet.create({
     container: {
         flex: 1,
+        flexDirection: 'column',
+        backgroundColor: '#7a4696',
+        width: 370,
+        height: 730,
         position: 'absolute',
-        top: 0, 
-        bottom: 0,  
-        right: 0,
+        // top: 0, 
+        // bottom: 0,  
+         //right: 0,   
+    },
+    containerTop: {
+        flex:0.07,
+        alignItems: 'flex-start',
+        justifyContent: 'center',
         backgroundColor: '#7a4696',
     },
-    textX: {
-        paddingTop: 30,
-        paddingLeft: 10,
-        color: 'white',
-        fontSize: 24,
+    containerMiddle: {
+        flex:0.83,
+        backgroundColor: '#7a4696',
+    },
+    containerBottom: {
+        flex:0.10,
+        alignItems: 'center',
+        justifyContent: 'center',
+        backgroundColor: '#7a4696',
     },
     pageText: {
         textAlign: 'left',
@@ -66,17 +84,6 @@ const styles = StyleSheet.create({
         paddingTop: 10,
         fontSize: 18,
         color: 'white',
-    },
-    confirm: {
-        paddingBottom: 20,
-        paddingTop: 10,
-        alignItems: 'center',
-    },
-    textOk: {
-        color: 'white',
-        fontSize: 24,
-        marginTop: 10,
-        justifyContent: 'center',
-    },
+    },  
 });
 

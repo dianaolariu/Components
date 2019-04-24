@@ -6,18 +6,19 @@ export default class ZipCodesApi extends Component {
     constructor(props) {
         super(props);
         this.state = { 
-        formatted_address: null
+            formatted_address: null,
         }
     }
-   
+    
     componentDidMount() {
-        axios.get('https://maps.googleapis.com/maps/api/geocode/json?address=60651&key=AIzaSyCJYZuEzGbd36ZL6eVENM9kb7Q4ZSdw-70')
+        const url = `https://maps.googleapis.com/maps/api/geocode/json?address=${this.props.formatted_address}&key=AIzaSyCJYZuEzGbd36ZL6eVENM9kb7Q4ZSdw-70`
+        axios.get(url)
         .then(response => {
             places = response.data.results[0].formatted_address
-            places2 = places.search('60651')
-            places3 = places.slice(0,places2)+'60651'
+            places2 = places.search(this.props.formatted_address)
+            places3 = places.slice(0,places2)+this.props.formatted_address
             console.log(places2)
-            this.setState({  formatted_address: places3,
+            this.setState({ formatted_address: places3,
             })  
         })
         .catch(error => {
