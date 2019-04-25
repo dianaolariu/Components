@@ -19,19 +19,20 @@ import PurpleSlideout from './components/purple-slideout';
 import SignatureCapturePage from './components/signature-capture-page';
 // import SignatureCapture from '@alanlima/react-native-signature-capture';
 import EventList from './components/event-list';
+import EventCard from './components/event-card.js';
 import RequestAssist from './components/request-assist';
 import ZipCodesApi from './components/zip-codes-api';
 
 
 
 export default class App extends Component<Props> {
-//   constructor(props) {
-//     super(props);
-//     this.state = { 
-//         formatted_address: '07030',
-//     }
-// }
-  
+  constructor(props) {
+    super(props);
+    this.state = { 
+        formatted_address: '61562',
+    }
+   
+}
 //   constructor(props){
 //     super(props);
 //     this.state = {
@@ -152,22 +153,30 @@ export default class App extends Component<Props> {
       //     Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free 
       //     m repetition, injected humour, or non-characteristic words etc." confirm = {this._onPressButtonOk} /> 
       // </View>
-       <ScrollView style = {styles.container}>
-        <EventList  name='Justin Timberlake'
-                    address='Heidelberg, PA 15106'
-                    date='Monday, December 10th - 7.30 PM'
-        />
-        {/* <SignatureCapturePage /> */}
-         {/* <EventList />
-         <EventList />
-         <EventList />
-         <EventList />  */}
+      //  <ScrollView style = {styles.container}>
+      //   <EventCard  name='Justin Timberlake'
+      //               address='Heidelberg, PA 15106'
+      //               date='Monday, December 10th - 7.30 PM'
+      //   />
+      //   {/* <SignatureCapturePage /> */}
+      //    <EventCard />
+      //    <EventCard />
+      //    <EventCard />
+      //    <EventCard /> 
 
-        {/* // <RequestAssist />
-        //   <ZipCodesApi  formatted_address = {this.state.formatted_address}
-        //    /> 
-        //    <MainView /> */}
-        </ScrollView>
+      //     {/* <RequestAssist /> */}
+          
+      //     {/* <ZipCodesApi  formatted_address = {this.state.formatted_address}
+      //       />  */}
+      //     {/* <MainView /> */}
+      //   </ScrollView>
+      <View style = {styles.container}>
+        <EventList/>
+        {/* <EventCard  name='Justin Timberlake'
+                                    address='Heidelberg, PA 15106'
+                                    date='Monday, December 10th - 7.30 PM'
+                        /> */}
+      </View>
     );
   }
 }
