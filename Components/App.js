@@ -22,6 +22,7 @@ import EventList from './components/event-list';
 import EventCard from './components/event-card.js';
 import RequestAssist from './components/request-assist';
 import ZipCodesApi from './components/zip-codes-api';
+import AddGuest from './components/add-guest';
 
 
 
@@ -171,7 +172,8 @@ export default class App extends Component<Props> {
       //     {/* <MainView /> */}
       //   </ScrollView>
       <View style = {styles.container}>
-        <EventList/>
+        <AddGuest/>
+        {/* <EventList/> */}
         {/* <EventCard  name='Justin Timberlake'
                                     address='Heidelberg, PA 15106'
                                     date='Monday, December 10th - 7.30 PM'

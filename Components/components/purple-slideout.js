@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet,Text, ScrollView, TouchableOpacity, Animated, Easing, Dimensions, View } from 'react-native';
+import { StyleSheet, Animated, View, ScrollView, TouchableOpacity, Text, Easing, Dimensions, } from 'react-native';
 import SignatureCapturePage from '../components/signature-capture-page';
 
 
@@ -15,9 +15,9 @@ export default class PurpleSlideout extends Component {
 
     _move = (visible) => {
         Animated.timing(this.state.xValue, {
-            toValue: visible ? width : -8,
+            toValue: visible ? width : 0,
             duration: 300,
-            asing: Easing.linear,
+            easing: Easing.linear,
         }).start(() => this.props.callback(visible));
        }
 
@@ -54,8 +54,8 @@ const styles = StyleSheet.create({
         flex: 1,
         flexDirection: 'column',
         backgroundColor: '#7a4696',
-        width: 370,
-        height: 730,
+        width: 380,
+        height: 740,
         position: 'absolute',
         // top: 0, 
         // bottom: 0,  

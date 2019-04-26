@@ -17,7 +17,6 @@ export default class ZipCodesApi extends Component {
             places = response.data.results[0].formatted_address
             places2 = places.search(this.props.formatted_address)
             places3 = places.slice(0,places2)+this.props.formatted_address
-            console.log(places2)
             this.setState({ formatted_address: places3,
             })  
         })
@@ -32,6 +31,6 @@ export default class ZipCodesApi extends Component {
             </View>    
         );
     }
-}
+};
 
 

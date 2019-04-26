@@ -10,7 +10,8 @@ const styles = StyleSheet.create({
 export default class EventList extends Component {
     constructor(props) {
         super(props);
-        this.state = {image: require('../assets/book.jpg')}
+        this.state = {image: require('../assets/book.jpg'),
+        slideoutVisible: true}
     };
 
     // onPress = () => {
@@ -24,9 +25,11 @@ export default class EventList extends Component {
     }
 
     _onPressButtonAt= () => {
-        this.setState({slideoutVisible: true})  
+        //this.setState({slideoutVisible: true})  
         this.foo.myFunc(!this.state.slideoutVisible)
-        this.setState({slideoutVisible: !this.state.slideoutVisible, })
+        this.setState({slideoutVisible: false })
+        // this.setState({slideoutVisible: !this.state.slideoutVisible, })
+
     }
       
     getResponse(result){

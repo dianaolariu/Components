@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet,TouchableOpacity, Image, Text,View, Linking, ScrollView, Alert} from 'react-native';
+import { StyleSheet,TouchableOpacity, Image, Text,View,  ScrollView, Alert} from 'react-native';
 import PurpleSlideout from './purple-slideout';
 
 const styles = StyleSheet.create({
@@ -76,7 +76,7 @@ export default class EventCard extends Component {
 
     _onPressBookStar = () => {
         this.setState({
-            image: require('../assets/done.jpg'),
+            //image: require('../assets/done.jpg'),
             slideoutVisible: true,
         })
         this.props.callback()
@@ -112,7 +112,6 @@ export default class EventCard extends Component {
                                     <Image style={{ width: 30, height: 30, }} source={require('../assets/white-star.psd')} />
                                     <Text style={{color: 'white', fontSize: 10}}>FEATURED</Text>
                                 </TouchableOpacity>
-
                                 <TouchableOpacity style={styles.containerEvent} >
                                     <Image style={{ width: 30, height: 30,}}  source={require('../assets/white-star.psd')} />
                                     <Text style={{color: 'white', fontSize: 10}}>MANAGE {`\n`} EVENT</Text>
