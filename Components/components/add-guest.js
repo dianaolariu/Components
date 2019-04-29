@@ -16,6 +16,7 @@ export default class AddGuest extends Component {
                         zip: ''
                      }
     
+    
         //this.handleNameChange = this.handleNameChange.bind(this);
         //this.handleSubmit = this.handleSubmit.bind(this);
       }
@@ -39,7 +40,7 @@ export default class AddGuest extends Component {
            
             <KeyboardAvoidingView
                 style={styles.container}
-                behavior="padding"
+                behavior="padding" enabled
             > 
                 <View>
                     <Text style={styles.header}>Required Information</Text>
@@ -69,6 +70,7 @@ export default class AddGuest extends Component {
                         <TextInput
                         style={styles.textInput}
                         placeholder="EMAIL"
+                        autoCapitalize={'none'}
                         maxLength={30}
                         onBlur={Keyboard.dismiss}
                         value={this.state.email}
@@ -79,6 +81,7 @@ export default class AddGuest extends Component {
                         <TextInput
                         style={styles.textInput}
                         placeholder="PHONE (numbers only)"
+                        keyboardType="numeric"
                         maxLength={20}
                         onBlur={Keyboard.dismiss}
                         value={this.state.phone}
@@ -89,7 +92,8 @@ export default class AddGuest extends Component {
                         <TextInput
                         style={styles.textInput}
                         placeholder="ADDRESS 1"
-                        maxLength={30}
+                        maxLength={50}
+                        //multiline='true'
                         onBlur={Keyboard.dismiss}
                         value={this.state.name}
                         onChangeText={(addressOne) => this.setState({addressOne})}
@@ -99,7 +103,7 @@ export default class AddGuest extends Component {
                         <TextInput
                         style={styles.textInput}
                         placeholder="ADDRESS 2"
-                        maxLength={30}
+                        maxLength={50}
                         onBlur={Keyboard.dismiss}
                         value={this.state.name}
                         onChangeText={(addressTwo) => this.setState({addressTwo})}
@@ -109,6 +113,7 @@ export default class AddGuest extends Component {
                         <TextInput
                         style={styles.textInput}
                         placeholder="ZIP"
+                        keyboardType="numeric"
                         maxLength={20}
                         onBlur={Keyboard.dismiss}
                         value={this.state.name}
@@ -122,6 +127,7 @@ export default class AddGuest extends Component {
                     </View>
                     
                 </ScrollView>
+                <View style={{ height: 70 }} />
             </KeyboardAvoidingView>
         )
      }
@@ -129,7 +135,7 @@ export default class AddGuest extends Component {
 const styles = StyleSheet.create({
     container: {
       flex: 1,
-      paddingTop: 45,
+      paddingTop: 25,
       backgroundColor: '#F5FCFF',
     },
     header: {
@@ -142,12 +148,13 @@ const styles = StyleSheet.create({
         paddingTop: 10
       },
     textInput: {
-        backgroundColor: '#CCCCCC',
+        // backgroundColor: '#CCCCCC',
+        backgroundColor: '#f5f5f5',
         margin: 10,
         height: 40,
         fontSize: 18,
         paddingLeft: 20,
-        paddingRight: 20
+        paddingRight: 20,
       },
       saveButton: {
         borderWidth: 1,

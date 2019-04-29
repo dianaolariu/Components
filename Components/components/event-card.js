@@ -79,7 +79,7 @@ export default class EventCard extends Component {
             //image: require('../assets/done.jpg'),
             slideoutVisible: true,
         })
-        this.props.callback()
+        this.props.callback(this.props.text)
     }   
 
     render() {

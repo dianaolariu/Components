@@ -10,6 +10,7 @@ export default class PurpleSlideout extends Component {
         super(props);
         this.state = {
             xValue: new Animated.Value(width),
+            newText: this.props.text
         }
     }
 
@@ -21,12 +22,13 @@ export default class PurpleSlideout extends Component {
         }).start(() => this.props.callback(visible));
        }
 
-    myFunc(newState) {
+    myFunc(newState, newText) {
+        this.setState({newText: newText})
         this._move(newState);
     }
     
     render() {
-        const {text, confirm,} = this.props;
+        const { confirm,} = this.props;
         return (
             <Animated.View style={[styles.container, {marginLeft: this.state.xValue}]} >
                 <View style={styles.containerTop}>
@@ -36,7 +38,7 @@ export default class PurpleSlideout extends Component {
                 </View>
                     <ScrollView style={[styles.containerMiddle, {backgroundColor: '#7a4696'}]}>
                         <Text style={styles.pageText}>
-                            {text}
+                            {this.state.newText}
                         </Text>
                         <SignatureCapturePage /> 
                     </ScrollView>

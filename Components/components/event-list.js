@@ -11,39 +11,38 @@ export default class EventList extends Component {
     constructor(props) {
         super(props);
         this.state = {image: require('../assets/book.jpg'),
-        slideoutVisible: true}
+        slideoutInvisible: true}
     };
 
     // onPress = () => {
     //     this.setState({
     //         image: require('../assets/done.jpg'),
-    //         slideoutVisible: true,
+    //         slideoutInvisible: true,
     //     })
     // }
     _onPressButtonOk= () => {
         Alert.alert('Event Confirmed')
     }
 
-    _onPressButtonAt= () => {
-        //this.setState({slideoutVisible: true})  
-        this.foo.myFunc(!this.state.slideoutVisible)
-        this.setState({slideoutVisible: false })
-        // this.setState({slideoutVisible: !this.state.slideoutVisible, })
+    _onPressButtonAt= (newText) => {
+        //this.setState({slideoutInvisible: true})  
+        this.purpleslideout.myFunc(!this.state.slideoutInvisible, newText)
+        // this.setState({slideoutInvisible: !this.state.slideoutInvisible, })
 
     }
       
     getResponse(result){
         result ?
-        this.setState({slideoutVisible: true, })
+        this.setState({slideoutInvisible: true, })
         :
-        null
+        this.setState({slideoutInvisible: false })
     }
     render() {
         return (
             <View style={{flex:1, color:'red'}}>
                 <View style={{zIndex:2}}>
                     <PurpleSlideout style={{position: 'absolute'}}
-                        ref={foo => {this.foo = foo;}}
+                        ref={pointer => {this.purpleslideout = pointer;}}
                         callback={this.getResponse.bind(this)}
                         text="Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from
                         making it over years old. Richard McClintock, a Latin professor at 
@@ -81,12 +80,17 @@ export default class EventList extends Component {
                             <EventCard  name='Justin Timberlake'
                                         address='Heidelberg, PA 15106'
                                         date='Monday, December 10th - 7.30 PM'
+                                        text='abc1'
                                         callback={this._onPressButtonAt.bind(this)}
                             />
-                            <EventCard callback={this._onPressButtonAt.bind(this)}/>
-                            <EventCard callback={this._onPressButtonAt.bind(this)}/>
-                            <EventCard callback={this._onPressButtonAt.bind(this)}/>
-                            <EventCard callback={this._onPressButtonAt.bind(this)}/> 
+                            <EventCard callback={this._onPressButtonAt.bind(this)}
+                                       text='abc2' />
+                            <EventCard callback={this._onPressButtonAt.bind(this)}
+                                        text='abc3' />
+                            <EventCard callback={this._onPressButtonAt.bind(this)}
+                                        text='abc4' />
+                            <EventCard callback={this._onPressButtonAt.bind(this)}
+                                        text='abc5' /> 
                         </ScrollView>
                     </View>
             </View>

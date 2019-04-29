@@ -170,15 +170,15 @@ export default class App extends Component<Props> {
       //     {/* <ZipCodesApi  formatted_address = {this.state.formatted_address}
       //       />  */}
       //     {/* <MainView /> */}
-      //   </ScrollView>
-      <View style = {styles.container}>
-        <AddGuest/>
-        {/* <EventList/> */}
+      //</ScrollView>
+       <View style = {styles.container}>
+        {/* <AddGuest/> */}
+        <EventList/>
         {/* <EventCard  name='Justin Timberlake'
                                     address='Heidelberg, PA 15106'
                                     date='Monday, December 10th - 7.30 PM'
                         /> */}
-      </View>
+       </View>
     );
   }
 }
@@ -190,13 +190,15 @@ const styles = StyleSheet.create({
     //width: 300,
     //resizeMode: 'contain',
     marginTop: 80,
-    backgroundColor: '#f5f5f5',
+    //backgroundColor: '#f5f5f5',
+    //backgroundColor: 'white',
     // margin: 40,
    // width: 40,
    // height: 440
     //flexDirection: "column",
     //transform: [{ rotate: '270deg'}]
-    //backgroundColor: '#649EBC',
+    backgroundColor: '#649EBC',
+    backgroundColor: '#01ab91',
     //padding: 20,
   },
 });
