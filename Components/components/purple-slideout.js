@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { StyleSheet, Animated, View, ScrollView, TouchableOpacity, Text, Easing, Dimensions, } from 'react-native';
-import SignatureCapturePage from '../components/signature-capture-page';
+import { StyleSheet, Animated, View, ScrollView, TouchableOpacity, Text, Easing, Dimensions, TouchableWithoutFeedback } from 'react-native';
+// import SignatureCapturePage from '../components/signature-capture-page';
 
 
 var { width } = Dimensions.get('window');
@@ -10,7 +10,7 @@ export default class PurpleSlideout extends Component {
         super(props);
         this.state = {
             xValue: new Animated.Value(width),
-            newText: this.props.text
+            // newText: this.props.text
         }
     }
 
@@ -40,7 +40,7 @@ export default class PurpleSlideout extends Component {
                         <Text style={styles.pageText}>
                             {this.state.newText}
                         </Text>
-                        <SignatureCapturePage /> 
+                        {/* <SignatureCapturePage />  */}
                     </ScrollView>
                     <View style={styles.containerBottom}>
                     <TouchableOpacity onPress={confirm}>

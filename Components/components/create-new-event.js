@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import { StyleSheet,View, ScrollView, Text, TextInput, Keyboard, TouchableOpacity, KeyboardAvoidingView, Animated } from 'react-native';
 
 
-export default class AddGuest extends Component {
+
+
+export default class CreateNewEvent extends Component {
     constructor(props) {
         super(props);
         this.state = {  firstName: '',
@@ -33,22 +35,22 @@ export default class AddGuest extends Component {
 
     render() {
         return(
+
+            
            
             <KeyboardAvoidingView
                 style={styles.container}
                 behavior="padding" enabled
             > 
                 <View>
-                    {/* <Text style={styles.header}>Required Information</Text> */}
-                    <Text style={styles.header}>Create New Event</Text>
+                    <Text style={styles.header}>Required Information</Text>
                 </View>
                 <ScrollView>
                     <View style={styles.inputContainer}>
                         <TextInput
                         style={styles.textInput}
                         placeholder="FIRST NAME"
-                        //autoCapitalize = 'characters'
-                        //maxLength={20}
+                        maxLength={20}
                         onBlur={Keyboard.dismiss}
                         value={this.state.firstName}
                         onChangeText={(firstName) => this.setState({firstName})}
@@ -58,7 +60,7 @@ export default class AddGuest extends Component {
                         <TextInput
                         style={styles.textInput}
                         placeholder="LAST NAME"
-                        //maxLength={20}
+                        maxLength={20}
                         onBlur={Keyboard.dismiss}
                         value={this.state.lastName}
                         onChangeText={(lastName) => this.setState({lastName})}
@@ -68,8 +70,8 @@ export default class AddGuest extends Component {
                         <TextInput
                         style={styles.textInput}
                         placeholder="EMAIL"
-                        autoCapitalize='none'
-                        //maxLength={30}
+                        autoCapitalize={'none'}
+                        maxLength={30}
                         onBlur={Keyboard.dismiss}
                         value={this.state.email}
                         onChangeText={(email) => this.setState({email})}
@@ -90,7 +92,7 @@ export default class AddGuest extends Component {
                         <TextInput
                         style={styles.textInput}
                         placeholder="ADDRESS 1"
-                        //maxLength={50}
+                        maxLength={50}
                         //multiline='true'
                         onBlur={Keyboard.dismiss}
                         value={this.state.name}
@@ -101,7 +103,7 @@ export default class AddGuest extends Component {
                         <TextInput
                         style={styles.textInput}
                         placeholder="ADDRESS 2"
-                        //maxLength={50}
+                        maxLength={50}
                         onBlur={Keyboard.dismiss}
                         value={this.state.name}
                         onChangeText={(addressTwo) => this.setState({addressTwo})}

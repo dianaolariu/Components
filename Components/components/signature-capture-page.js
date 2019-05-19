@@ -2,8 +2,8 @@ import React, {Component} from 'react';
 import { StyleSheet, Text,View, ScrollView, Image, TouchableOpacity } from 'react-native';
 import SignatureCapture from '@alanlima/react-native-signature-capture';
 
-type Props = {};
-export default class SignatureCapturePage extends Component<Props> {
+
+export default class SignatureCapturePage extends Component {
     constructor(props) {
         super(props);
         this.state = { signature: null };
@@ -79,7 +79,6 @@ const styles = StyleSheet.create({
         margin: 20,    
     },
     tab: {
-        //flex: 1,
         flexDirection: "row",
         justifyContent: 'space-around',
     },

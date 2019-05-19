@@ -1,6 +1,6 @@
 
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, TextInput, View, Alert, Animated,TouchableOpacity, Dimensions, Easing, ScrollView,FlatList, Image,TouchableHighlight } from 'react-native';
+import {Platform, StyleSheet, Text, TextInput, View, Alert, Animated,TouchableOpacity, Dimensions, Easing, ScrollView,FlatList, Image,TouchableHighlight, Field} from 'react-native';
 import OneButton from './OneButtonFile/one-button';
 import ProposedPayment from './components/propose-payment';
 import ShowingCard from './components/showing-card';
@@ -16,44 +16,51 @@ import Create from './components/component';
 import DisputePayment from './components/dispute-payment';
 import Signature from 'react-native-signature-canvas';
 import PurpleSlideout from './components/purple-slideout';
-import SignatureCapturePage from './components/signature-capture-page';
+import SignatureCapture from './components/signature-capture-page';
 // import SignatureCapture from '@alanlima/react-native-signature-capture';
 import EventList from './components/event-list';
-import EventCard from './components/event-card.js';
+import OrderCard from './components/order-card.js';
 import RequestAssist from './components/request-assist';
 import ZipCodesApi from './components/zip-codes-api';
 import AddGuest from './components/add-guest';
+import CreateNewEvent from './components/create-new-event';
+import ZipCodesApiReviewTwo from './components/ZipCodeApiReviewTwo';
+import EventsNew from './components/events-new';
+import EventListNew from './components/event-list-new';
+import Radio from './components/checkTry';
+import CheckBoxField from './components/checkbox-field';
+
+let x;
 
 
-
-export default class App extends Component<Props> {
-  constructor(props) {
-    super(props);
-    this.state = { 
-        formatted_address: '61562',
-    }
-   
-}
-//   constructor(props){
+export default class App extends Component{
+//   constructor(props) {
 //     super(props);
-//     this.state = {
-//       slideoutVisible: true, 
-//     };
-//   }
-//   _onPressButtonOk= () => {
-//     Alert.alert('Event Confirmed')
-//   }
-//   _onPressButtonAt= () => {
-//     this.foo.myFunc(!this.state.slideoutVisible)
-//     this.setState({slideoutVisible: !this.state.slideoutVisible, })
-//   }
-  
-//   getResponse(result){
-//     result ?
-//     this.setState({slideoutVisible: true, })
-//     :
-//     null
+//     this.state = { 
+//         formatted_address: '61562',
+//     }
+   
 // }
+  constructor(props){
+    super(props);
+    this.state = {
+      slideoutVisible: true, 
+    };
+  }
+  _onPressButtonOk= () => {
+    Alert.alert('Event Confirmed')
+  }
+  _onPressButtonAt= () => {
+    this.foo.myFunc(!this.state.slideoutVisible)
+    this.setState({slideoutVisible: !this.state.slideoutVisible, })
+  }
+  
+  getResponse(result){
+    result ?
+    this.setState({slideoutVisible: true, })
+    :
+    null
+}
   render() {
     return (
       //  {/* <View style={styles.container}> */}
@@ -116,7 +123,6 @@ export default class App extends Component<Props> {
           // <DisputePayment />
       // {/* </View> */}
       // <View style={styles.container}>
-      
       //  <TouchableOpacity style={styles.closeX} onPress ={this._onPressButtonAt}>
       //      <Text style={{fontSize: 50, color: 'black', alignSelf: 'center', marginTop: 150, }}>@</Text>
       //  </TouchableOpacity>
@@ -153,32 +159,75 @@ export default class App extends Component<Props> {
       //     over 200 Latin words, combined with a handful of model sentence structures, to generate
       //     Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free 
       //     m repetition, injected humour, or non-characteristic words etc." confirm = {this._onPressButtonOk} /> 
-      // </View>
+      //  </View>
       //  <ScrollView style = {styles.container}>
       //   <EventCard  name='Justin Timberlake'
       //               address='Heidelberg, PA 15106'
       //               date='Monday, December 10th - 7.30 PM'
       //   />
-      //   {/* <SignatureCapturePage /> */}
       //    <EventCard />
       //    <EventCard />
       //    <EventCard />
       //    <EventCard /> 
+      //    </ScrollView>
 
-      //     {/* <RequestAssist /> */}
+          // {/* <RequestAssist /> */}
           
-      //     {/* <ZipCodesApi  formatted_address = {this.state.formatted_address}
-      //       />  */}
-      //     {/* <MainView /> */}
-      //</ScrollView>
-       <View style = {styles.container}>
-        {/* <AddGuest/> */}
-        <EventList/>
-        {/* <EventCard  name='Justin Timberlake'
-                                    address='Heidelberg, PA 15106'
-                                    date='Monday, December 10th - 7.30 PM'
-                        /> */}
-       </View>
+        //   {/* <ZipCodesApi  formatted_address = {this.state.formatted_address}
+        //     />  */}
+        //   {/* <MainView />
+     
+        // // <View style = {styles.container}>
+        //  {/* <AddGuest/> */}
+        //  {/* <ZipCodesApi  formatted_address = {this.state.formatted_address}
+        //  />   */}
+        //  {/* <ZipCodesApiReview /> */}
+        //   {/* <EventList/> */}
+        // {/* <EventCard  name='Justin Timberlake'
+        //                      address='Heidelberg, PA 15106'
+        //                             date='Monday, December 10th - 7.30 PM'
+        //                 /> */}
+        // {/* </View> */}
+      // <ScrollView style = {styles.container}>
+      // <EventsNew  name="Karen’s Wine Tasting"
+      //             time='6:00pm'
+      //             date='Saturday, May 11th' 
+      //             address1='400 South Main St'
+      //             address2='Ipswich, MA 01938'
+      //             />
+      // <EventsNew  name="Karen’s Wine Tasting"
+      //             time='6:00pm'
+      //             date='Saturday, May 11th' 
+      //             address1='400 South Main St'
+      //             address2='Ipswich, MA 01938'
+      //             />
+      //   <EventsNew  name="Karen’s Wine Tasting"
+      //             time='6:00pm'
+      //             date='Saturday, May 11th' 
+      //             address1='400 South Main St'
+      //             address2='Ipswich, MA 01938'
+      //             />
+      //   <EventsNew  name="Karen’s Wine Tasting"
+      //             time='6:00pm'
+      //             date='Saturday, May 11th' 
+      //             address1='400 South Main St'
+      //             address2='Ipswich, MA 01938'
+      //             />
+      //    {/* <SignatureCapturePage /> */}
+      //  </ScrollView>
+      // <View style = {styles.container}>
+      //    <PurpleSlideout />
+        //  {/* <SignatureCapture /> */} */}
+        // {/* <OrderCard /> */}
+        //  {/* <EventListNew /> */}
+      //  </View>
+      <View style = {styles.container}>
+        <Field
+          name="amenities"
+          options={["one", "two"]}
+          component={CheckBoxField}
+        />
+      </View>
     );
   }
 }
@@ -198,7 +247,7 @@ const styles = StyleSheet.create({
     //flexDirection: "column",
     //transform: [{ rotate: '270deg'}]
     backgroundColor: '#649EBC',
-    backgroundColor: '#01ab91',
+    //backgroundColor: '#01ab91',
     //padding: 20,
   },
 });

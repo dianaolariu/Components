@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 import {Text, View,} from 'react-native';
 import axios from 'axios';
 
-export default class ZipCodesApi extends Component {
+export default class ZipCodesApiReview extends Component {
     constructor(props) {
         super(props);
         this.state = { 
-        //places: [{}],
+        places: [{}],
         formatted_address: null
         }
     }
@@ -22,9 +22,9 @@ export default class ZipCodesApi extends Component {
             )
             tmp2 = response.data.results[0].formatted_address
             tmp3 = tmp2.search('60651')
-            tmp4 = tmp2.slice(0,tmp3)+'60651'
+            tmp4 = tmp2.slice(0,tmp3) //+'60651'
             console.log(tmp3)
-            this.setState({  formatted_address: tmp4, //places: tmp,
+            this.setState({  formatted_address: tmp4, places: tmp,
             })  
         })
         .catch(error => {
@@ -39,20 +39,20 @@ export default class ZipCodesApi extends Component {
         return (
             <View>
                 <Text style={{color: 'white'}}>{this.state.formatted_address}</Text>
-                {/* {   
+                {   
                 this.state.places.map((place) =>
                     {
                         //if(this.state.places[0].types == 'postal_code'){
                             return (
                               
                                 <View >
-                                    <Text style={{color: 'white'}}>{place.long_name}</Text>
+                                    <Text style={{color: 'white'}}>{place.short_name}</Text>
                                 </View> 
                             );
                         //}
                     }
                 )
-                } */}
+                }
             </View>    
         );
     }

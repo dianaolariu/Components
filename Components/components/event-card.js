@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet,TouchableOpacity, Image, Text,View,  ScrollView, Alert} from 'react-native';
+import { StyleSheet,TouchableOpacity, Image, Text,View,  ScrollView, Alert, Dimensions} from 'react-native';
 import PurpleSlideout from './purple-slideout';
 
 const styles = StyleSheet.create({
@@ -20,16 +20,14 @@ const styles = StyleSheet.create({
     containerRight: {
         flex: 0.25,
         flexDirection: 'column',
-        padding: 0,
-        marginLeft: 0,
         zIndex: 1,
 
     },
     containerName: {
         flex:0.25,
         flexDirection: 'row',
-        //justifyContent: 'space-between',
-        //alignItems: 'center',
+        justifyContent: 'space-between',
+        alignItems: 'center',
         backgroundColor: '#01ab91',
         zIndex: 3,
 
@@ -63,7 +61,7 @@ const styles = StyleSheet.create({
         marginTop: 1,
         backgroundColor: '#ffba15',
         alignItems: 'center',
-        justifyContent: 'space-evenly',  
+        justifyContent: 'space-evenly', 
     },  
   });
 
@@ -76,7 +74,6 @@ export default class EventCard extends Component {
 
     _onPressBookStar = () => {
         this.setState({
-            //image: require('../assets/done.jpg'),
             slideoutVisible: true,
         })
         this.props.callback(this.props.text)
@@ -112,7 +109,7 @@ export default class EventCard extends Component {
                                     <Image style={{ width: 30, height: 30, }} source={require('../assets/white-star.psd')} />
                                     <Text style={{color: 'white', fontSize: 10}}>FEATURED</Text>
                                 </TouchableOpacity>
-                                <TouchableOpacity style={styles.containerEvent} >
+                                <TouchableOpacity style={styles.containerEvent}  >
                                     <Image style={{ width: 30, height: 30,}}  source={require('../assets/white-star.psd')} />
                                     <Text style={{color: 'white', fontSize: 10}}>MANAGE {`\n`} EVENT</Text>
                                 </TouchableOpacity>
